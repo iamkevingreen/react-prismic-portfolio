@@ -1,9 +1,15 @@
+@import 'global/variables';
+@import 'global/mixins';
 @import 'global/transitions';
 @import 'global/navigation';
+@import 'global/typography';
+@import 'global/global';
 
-$background: lightblue;
+body,html {
+  padding: 0;
+  margin: 0;
+}
 
-body {
-  background: $background;
-  font-family: "Helvetica Neue", serif;
+* {
+  box-sizing: border-box;
 }

@@ -16,6 +16,9 @@ let WorkIndex = React.createClass({
   componentWillMount() {
     this.getData()
   },
+  componentDidMount() {
+    emitter.emit('nav/item/active', this.props.data.path)
+  },
   componentLoader() {
     if (this.state.loading) {
       return (
@@ -58,7 +61,7 @@ let WorkIndex = React.createClass({
   },
   render() {
     return (
-      <div>
+      <div className="page--background">
 
       <Helmet
         title="Projects Landing Page"
@@ -66,8 +69,10 @@ let WorkIndex = React.createClass({
             {"name": "description", "content": "Spaghetti Emoji"}
           ]}
         />
-        <h2>Project - push meta data with helmets</h2>
-        {this.renderProjects()}
+        <div className="site--wrapper">
+          <h2>Project - push meta data with helmets</h2>
+          {this.renderProjects()}
+        </div>
       </div>
     )
   }

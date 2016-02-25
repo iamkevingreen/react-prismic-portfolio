@@ -26,7 +26,7 @@ let Main = React.createClass({
   },
 
   onWorkIndex: function() {
-    return <WorkIndex />
+    return <WorkIndex data={this.state.path} />
   },
 
 
@@ -34,9 +34,11 @@ let Main = React.createClass({
     const animateApp = React.cloneElement(this.renderCurrentRoute(), {key: this.state.path});
 
     return (
-      <div className="wrapper">
-        <h1>Spaghetti Emoji</h1>
-        <Nav path={this.state.path} />
+      <div className="site">
+        <header>
+          <h1>Spaghetti Emoji</h1>
+          <Nav path={this.state.path} />
+        </header>
         <ReactCSSTransitionGroup component="div" transitionName="pageTransition" transitionAppear={true} transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}>
           {animateApp}
         </ReactCSSTransitionGroup>

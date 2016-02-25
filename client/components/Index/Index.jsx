@@ -10,19 +10,21 @@ class IndexComponent extends Component {
     }
 
     return (
-      <div>
+      <div className="page--background">
       <Helmet
         title="Te Spaghetti"
         meta={[
             {"name": "description", "content": "Spaghetti Emoji"}
           ]}
         />
-        <h2>Index Emoji</h2>
-        <ul ref="indexList" className="index-list">
-          {this.props.items.map((item, index) => {
-            return (<li key={index}>item {item}</li>);
-          })}
-        </ul>
+        <div className="site--wrapper">
+          <h2>Index Emoji</h2>
+          <ul ref="indexList" className="index-list">
+            {this.props.items.map((item, index) => {
+              return (<li key={index}>item {item}</li>);
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

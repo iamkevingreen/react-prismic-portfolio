@@ -1,11 +1,30 @@
+header {
+  text-align: center;
+  background: white;
+  padding: 20px 0;
+}
+
 nav {
   text-align: center;
   a {
     padding: 10px;
     margin: 0 10px;
+    color: rgba(0,0,0,.5);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    &:hover {
+      color: lightblue;
+    }
+    &.active {
+      color: rgba(0,0,0,1);
+    }
   }
   li {
     list-style-type: none;
     display: inline-block;
+  }
+  li, ul {
+    margin: 0;
+    padding: 0;
   }
 }
