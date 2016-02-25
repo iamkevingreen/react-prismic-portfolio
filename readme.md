@@ -2,6 +2,8 @@
 
 > Simple production-ready boilerplate for [React](http://facebook.github.io/react/) and [Webpack](http://webpack.github.io/) (SASS and React hot reloading) and tests with Jest.
 
+[Woking Example](http://kevin-green-portfolio.herokuapp.com)
+
 ## Install
 
 Clone repository and run:
