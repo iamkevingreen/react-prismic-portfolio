@@ -16,8 +16,7 @@ let Main = React.createClass({
 
   routes: {
     '/': 'onIndex',
-    '/work': 'onWorkIndex',
-    '/work/:slug': 'onWorkLink'
+    '/work': 'onWorkIndex'
   },
 
   onIndex: function() {
@@ -28,9 +27,6 @@ let Main = React.createClass({
     return <WorkIndex />
   },
 
-  onWorkLink: function(slug) {
-    return <WorkSingle />;
-  },
 
   render() {
     const animateApp = React.cloneElement(this.renderCurrentRoute(), {key: this.state.path});
