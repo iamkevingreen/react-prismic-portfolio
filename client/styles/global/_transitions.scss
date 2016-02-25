@@ -1,0 +1,30 @@
+.pageTransition-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.pageTransition-enter.pageTransition-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: opacity 500ms ease, transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.pageTransition-leave {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.pageTransition-leave.pageTransition-leave-active {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 500ms ease, transform 500ms cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+.pageTransition-appear {
+  opacity: 0.01;
+}
+
+.pageTransition-appear.pageTransition-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
