@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Index from 'components/Index/Index';
 import Router from 'react-mini-router';
-import WorkIndex from 'components/Work/Index';
+import WorkIndex from 'components/Work/WorkIndex';
 
 
 
