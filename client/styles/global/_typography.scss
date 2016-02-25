@@ -1,0 +1,14 @@
+h1 {
+  font-size:1.8rem;
+  @include respond-at-and-above($break-medium) {
+    font-size: 2.3rem;
+  }
+  @include respond-at-and-above($break-large) {
+    font-size: 4rem;
+  }
+}
+
+a {
+  transition: all .3s;
+  text-decoration: none;
+}

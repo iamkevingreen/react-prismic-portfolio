@@ -1,0 +1,95 @@
+@mixin font-smoothing {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+@mixin font-base {
+    font-family: "Neuzeit Grotesk", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    @include font-smoothing;
+}
+
+@mixin absoluteImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin aspect-ratio() {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &:after {
+    content: '';
+    display: block;
+    /* intrinsic aspect ratio */
+    padding-bottom: 56.25%;
+    height: 0;
+  }
+
+  iframe {
+    position: absolute;
+  	top: 0;
+    left: 0;
+  	width: 100%;
+  	height: 100%;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+  }
+}
+
+// Clear Fix
+@mixin cf {
+  &:before, &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+  *zoom: 1;
+}
+
+//// Media Query Mixins ////
+@mixin respond-below($width) {
+  @media (max-width: $width - 1) {
+    @content;
+  }
+}
+
+@mixin respond-between($start, $end) {
+  @media (min-width: $start) and (max-width: $end - 1) {
+    @content;
+  }
+}
+
+@mixin respond-at-and-above($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-below($height) {
+  @media (max-height: $height - 1) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-between($start, $end) {
+  @media (min-height: $start) and (max-height: $end - 1) {
+    @content;
+  }
+}
+
+@mixin vertical-respond-at-and-above($height) {
+  @media (min-height: $height) {
+    @content;
+  }
+}
