@@ -50,7 +50,9 @@ module.exports = {
 
   module: {
     loaders: [
-      {test: /\.scss$/, loader: 'style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded'}
+      { test: /\.(woff|woff2|eot|ttf|svg|png|jpg|jpeg)$/, loader: 'url-loader?limit=100000&name=[name].[ext]' },
+      { test: /\.json$/, loader: "json-loader" },
+      { test: /\.scss$/, loader: 'style!css!autoprefixer?browsers=last 2 version!sass?outputStyle=expanded' }
     ],
 
     noParse: /\.min\.js/

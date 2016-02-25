@@ -1,13 +1,15 @@
 'use strict';
 
-import 'styles/main.scss';
+import 'styles/main.scss'
 
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
+import Router from 'react-mini-router'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import Index from 'components/Index/Index';
-import Router from 'react-mini-router';
-import WorkIndex from 'components/Work/Index';
+
+import Nav from 'components/Global/Nav'
+import Index from 'components/Index/Index'
+import WorkIndex from 'components/Work/Index'
 
 
 
@@ -33,10 +35,8 @@ let Main = React.createClass({
 
     return (
       <div className="wrapper">
-        <nav>
-          <a href="/">Index</a>
-          <a href="/work">Work</a>
-        </nav>
+        <h1>Spaghetti Emoji</h1>
+        <Nav path={this.state.path} />
         <ReactCSSTransitionGroup component="div" transitionName="pageTransition" transitionAppear={true} transitionAppearTimeout={500} transitionEnterTimeout={500} transitionLeaveTimeout={500}>
           {animateApp}
         </ReactCSSTransitionGroup>
