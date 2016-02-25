@@ -42,7 +42,8 @@ let WorkIndex = React.createClass({
         let result = {
           doc: record,
           data: {
-            title: record.get('projects.title').asText()
+            title: record.get('projects.title').asText(),
+            slug: record.slug
           }
         }
         cleanResults.push(result);
@@ -56,7 +57,7 @@ let WorkIndex = React.createClass({
   },
   renderProjects() {
     return this.state.projects.map((project, i) => {
-      return <Project key={i} data={project.data} slug={project.slug} />
+      return <Project key={i} data={project.data} slug={project.data.slug} />
     });
   },
   render() {

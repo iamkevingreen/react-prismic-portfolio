@@ -10,6 +10,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import Nav from 'components/Global/Nav'
 import Index from 'components/Index/Index'
 import WorkIndex from 'components/Work/Index'
+import WorkSingle from 'components/Work/Single'
 
 
 
@@ -18,7 +19,8 @@ let Main = React.createClass({
 
   routes: {
     '/': 'onIndex',
-    '/work': 'onWorkIndex'
+    '/work': 'onWorkIndex',
+    '/work/:slug': 'onWorkSingle'
   },
 
   onIndex: function() {
@@ -27,6 +29,10 @@ let Main = React.createClass({
 
   onWorkIndex: function() {
     return <WorkIndex data={this.state.path} />
+  },
+
+  onWorkSingle: function(slug) {
+    return <WorkSingle params={slug} />
   },
 
 

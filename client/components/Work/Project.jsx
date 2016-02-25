@@ -12,7 +12,7 @@ let Project = React.createClass({
   render() {
     return (
       <div className="block">
-        <h2><a href={this.props.slug}>{this.state.title}</a></h2> - coming from prizzy<br />
+        <h2><a href={"work/" + this.props.slug}>{this.state.title}</a></h2> - coming from prizzy<br />
       </div>
     )
   }
