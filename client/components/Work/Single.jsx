@@ -28,7 +28,7 @@ let WorkSingle = React.createClass({
         doc: record,
         meta: {
           title: record.get('projects.title').asText(),
-          image: record.getImage('projects.hero_image').url
+          image: record.getImage('projects.hero_image') ? record.getImage('projects.hero_image').url : ''
         }
       });
 
